@@ -98,16 +98,16 @@ const movies = [
         publishDate: "2018-01-03T19:04:28.809Z"
     },
     {
-        _id: "Shutter Islands",
-        title: "PK",
+        _id: "13",
+        title: "Shutter Islands",
         genre: {_id: 3, name: "Thriller"},
         numberInStock: 3,
         dailyRentalRate: 4.8,
         publishDate: "2018-01-03T19:04:28.809Z"
     },
     {
-        _id: "Mask",
-        title: "PK",
+        _id: "14",
+        title: "Mask",
         genre: {_id: 5, name: "Comedy"},
         numberInStock: 3,
         dailyRentalRate: 4.3,
@@ -131,10 +131,34 @@ const movies = [
     },
     {
         _id: "17",
-        title: "Megaledon",
+        title: "Transporter",
         genre: {_id: 1, name: "Action"},
         numberInStock: 3,
         dailyRentalRate: 3,
+        publishDate: "2018-01-03T19:04:28.809Z"
+    },
+    {
+        _id: "18",
+        title: "Thor",
+        genre: {_id: 1, name: "Action"},
+        numberInStock: 3,
+        dailyRentalRate: 2.5,
+        publishDate: "2018-01-03T19:04:28.809Z"
+    },
+    {
+        _id: "19",
+        title: "Spider-Man",
+        genre: {_id: 1, name: "Action"},
+        numberInStock: 3,
+        dailyRentalRate: 3,
+        publishDate: "2018-01-03T19:04:28.809Z"
+    },
+    {
+        _id: "20",
+        title: "Captain America",
+        genre: {_id: 1, name: "Action"},
+        numberInStock: 3,
+        dailyRentalRate: 2.5,
         publishDate: "2018-01-03T19:04:28.809Z"
     },
 ];

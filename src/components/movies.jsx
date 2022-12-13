@@ -7,6 +7,7 @@ import Table from './common/table';
 import Like from './common/like';
 import { paginate } from '../utils/paginate'
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 class Movies extends Component {
     state = {
@@ -16,7 +17,7 @@ class Movies extends Component {
         currentPage:1,
         sortColumn: {name: 'title', order: 'asc'},
         columns : [
-            {name: 'title', label: 'Title'},
+            {name: 'title', label: 'Title', content: movie=> <Link to={`/movies/${movie._id}`}>{movie.title}</Link>},
             {name: 'genre.name', label: 'Genre'},
             {name: 'numberInStock', label: 'Stock'},
             {name: 'dailyRentalRate', label: 'Rate'},
@@ -35,8 +36,8 @@ class Movies extends Component {
         const filteredMovies = selectedGenre && selectedGenre._id ? allMovies.filter(m=> m.genre._id === selectedGenre._id) : allMovies;
         const sortedMovies = _.orderBy(filteredMovies,[sortColumn.name], [sortColumn.order]);
         const movies = paginate(sortedMovies, currentPage, pageSize)
-        const {length: count} = this.state.movies;
-        return {totalCount: count, data: movies}
+        const {length: filteredcount} = filteredMovies;
+        return {filteredcount, data: movies}
     }
 
     handlePageChange = (page) => {
@@ -67,8 +68,9 @@ class Movies extends Component {
 
     render() { 
         if(this.state.movies.length === 0) return <p align="center">There are no movies to display.</p>
-        const {totalCount, data} = this.getPagedData();
+        const {filteredcount, data} = this.getPagedData();
         const {sortColumn, columns, currentPage} = this.state;
+        const totalCount = this.state.movies.length;
         return (
             <div className="row">
                 <div className="col-3">
@@ -78,7 +80,7 @@ class Movies extends Component {
                     onItemSelected={this.handleGenresSelect}/>
                 </div>
                 <div className="col">
-                    <p align="center">Showing {totalCount} movies</p>
+                    <p align="center">Showing {filteredcount} movies</p>
 
                     <Table 
                     data={data} 
@@ -89,7 +91,7 @@ class Movies extends Component {
                     onDelete={this.deleteMovieHandler} />
 
                     <Pagination 
-                    itemsCount={totalCount} 
+                    itemsCount={filteredcount} 
                     pageSize={this.state.pageSize} 
                     currentPage={currentPage}
                     onPageChange={this.handlePageChange} />
