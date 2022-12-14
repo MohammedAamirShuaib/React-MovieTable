@@ -1,172 +1,98 @@
-import * as genresAPI from "./fakeGenreService"
+import * as genresAPI from "./fakeGenreService";
 
 const movies = [
-    {
-        _id: "1",
-        title: "Terminator",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 6,
-        dailyRentalRate: 2.5,
-        publishDate: "2018-01-03T19:04:28.809Z",
-    },
-    {
-        _id: "2",
-        title: "Die Hard",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 4,
-        dailyRentalRate: 2,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "3",
-        title: "Get Out",
-        genre: {_id: 3, name: "Thriller"},
-        numberInStock: 9,
-        dailyRentalRate: 1.5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "4",
-        title: "Trip to Italy",
-        genre: {_id: 5, name: "Comedy"},
-        numberInStock: 12,
-        dailyRentalRate: 3,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "5",
-        title: "Airplane",
-        genre: {_id: 5, name: "Comedy"},
-        numberInStock: 8,
-        dailyRentalRate: 1.75,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "6",
-        title: "Inception",
-        genre: {_id: 3, name: "Thriller"},
-        numberInStock: 2,
-        dailyRentalRate: 5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "7",
-        title: "Avengers",
-        genre: {_id: 2, name: "Scifi"},
-        numberInStock: 14,
-        dailyRentalRate: 4,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "8",
-        title: "Conjuring",
-        genre: {_id: 4, name: "Horror"},
-        numberInStock: 5,
-        dailyRentalRate: 2.5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "9",
-        title: "PK",
-        genre: {_id: 5, name: "Comedy"},
-        numberInStock: 3,
-        dailyRentalRate: 3.8,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "10",
-        title: "Freddy",
-        genre: {_id: 3, name: "Thriller"},
-        numberInStock: 3,
-        dailyRentalRate: 3.2,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "11",
-        title: "Interstellar",
-        genre: {_id: 2, name: "Scifi"},
-        numberInStock: 3,
-        dailyRentalRate: 4.8,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "12",
-        title: "Grey Hound",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 3,
-        dailyRentalRate: 3.9,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "13",
-        title: "Shutter Islands",
-        genre: {_id: 3, name: "Thriller"},
-        numberInStock: 3,
-        dailyRentalRate: 4.8,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "14",
-        title: "Mask",
-        genre: {_id: 5, name: "Comedy"},
-        numberInStock: 3,
-        dailyRentalRate: 4.3,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "15",
-        title: "Aquaman",
-        genre: {_id: 2, name: "Scifi"},
-        numberInStock: 3,
-        dailyRentalRate: 4.2,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "16",
-        title: "BayWatch",
-        genre: {_id: 5, name: "Comedy"},
-        numberInStock: 3,
-        dailyRentalRate: 2.5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "17",
-        title: "Transporter",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 3,
-        dailyRentalRate: 3,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "18",
-        title: "Thor",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 3,
-        dailyRentalRate: 2.5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "19",
-        title: "Spider-Man",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 3,
-        dailyRentalRate: 3,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
-    {
-        _id: "20",
-        title: "Captain America",
-        genre: {_id: 1, name: "Action"},
-        numberInStock: 3,
-        dailyRentalRate: 2.5,
-        publishDate: "2018-01-03T19:04:28.809Z"
-    },
+  {
+    _id: "5b21ca3eeb7f6fbccd471815",
+    title: "Terminator",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    numberInStock: 6,
+    dailyRentalRate: 2.5,
+    publishDate: "2018-01-03T19:04:28.809Z",
+    liked: true
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471816",
+    title: "Die Hard",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    numberInStock: 5,
+    dailyRentalRate: 2.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471817",
+    title: "Get Out",
+    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    numberInStock: 8,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471819",
+    title: "Trip to Italy",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    numberInStock: 7,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47181a",
+    title: "Airplane",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    numberInStock: 7,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47181b",
+    title: "Wedding Crashers",
+    genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Comedy" },
+    numberInStock: 7,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47181e",
+    title: "Gone Girl",
+    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    numberInStock: 7,
+    dailyRentalRate: 4.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd47181f",
+    title: "The Sixth Sense",
+    genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Thriller" },
+    numberInStock: 4,
+    dailyRentalRate: 3.5
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd471821",
+    title: "The Avengers",
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
+    numberInStock: 7,
+    dailyRentalRate: 3.5
+  }
 ];
 
 export function getMovies() {
-    return movies;
+  return movies;
 }
 
 export function getMovie(id) {
-    return movies.find(m => m._id === id);
+  return movies.find(m => m._id === id);
+}
+
+export function saveMovie(movie) {
+  let movieInDb = movies.find(m => m._id === movie._id) || {};
+  movieInDb.title = movie.title;
+  movieInDb.genre = genresAPI.genres.find(g => g._id === movie.genreId);
+  movieInDb.numberInStock = movie.numberInStock;
+  movieInDb.dailyRentalRate = movie.dailyRentalRate;
+
+  if (!movieInDb._id) {
+    movieInDb._id = Date.now().toString();
+    movies.push(movieInDb);
+  }
+
+  return movieInDb;
+}
+
+export function deleteMovie(id) {
+  let movieInDb = movies.find(m => m._id === id);
+  movies.splice(movies.indexOf(movieInDb), 1);
+  return movieInDb;
 }
