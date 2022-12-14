@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
-import Movies from './components/movies';
-import Customers from './components/costomers';
-import Rentals from './components/rentals';
-import MovieForms from './components/movieForms';
-import NotFound from './components/notFound'
-import NavBar from './components/navBar';
-import LoginForm from './components/loginForm';
-import RegisterForm from './components/registerForm';
-import './App.css';
+import React, { Component } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Movies from "./components/movies";
+import Customers from "./components/costomers";
+import Rentals from "./components/rentals";
+import MovieForms from "./components/movieForms";
+import NotFound from "./components/notFound";
+import NavBar from "./components/navBar";
+import LoginForm from "./components/loginForm";
+import RegisterForm from "./components/registerForm";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends Component {
-  render() { 
+  render() {
     return (
       <React.Fragment>
-        <NavBar/>
+        <ToastContainer />
+        <NavBar />
         <main className="container">
           <Switch>
             <Route path="/login" component={LoginForm}></Route>
@@ -29,9 +32,8 @@ class App extends Component {
           </Switch>
         </main>
       </React.Fragment>
-
     );
   }
 }
- 
+
 export default App;
